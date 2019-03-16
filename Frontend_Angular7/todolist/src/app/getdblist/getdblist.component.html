@@ -1,0 +1,33 @@
+<div class="main-project-class">
+  <h1>This is your list!</h1>
+  <div class="main-content">
+    <div class="content-list-elements" *ngIf = "displayList; then thenBlock ; else elseBlock"></div>
+    <div class="content-actions">
+        <div class="secondary">
+          <span>What should i Do?</span>
+          <input #input_value name="description" type="text" >         
+        </div>
+        <div class="primary">
+            <button (click)="addTask(input_value.value)">Confirm</button> 
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #thenBlock>
+  <div class="template_body">
+    <h3>{{errorMsg}}</h3>
+    <div *ngFor="let task of getTaskArray() | keyvalue">
+      <ul>
+        <li class="lielement"><a style="cursor: pointer" (click)="removeTask(task.value.TaskId)">Χ</a>{{task.value.Task_Descr}}{{clicked}}</li>
+      </ul>
+    </div>  
+  </div>
+</ng-template>
+
+<ng-template #elseBlock>
+  <h2>
+      <span>List is currently empty!</span>
+  </h2>
+</ng-template>
