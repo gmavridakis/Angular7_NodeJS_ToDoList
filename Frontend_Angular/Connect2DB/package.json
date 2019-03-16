@@ -1,0 +1,17 @@
+{
+  "name": "connect2db",
+  "version": "1.0.0",
+  "description": "npm connect with db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "greg mavridakhs",
+  "license": "ISC",
+  "dependencies": {
+    "angular-route": "^1.7.7",
+    "async": "^2.6.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
+  }
+}
